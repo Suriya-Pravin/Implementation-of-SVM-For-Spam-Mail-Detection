@@ -74,12 +74,14 @@ accuracy
 
 
 ## Info():
-![image](https://github.com/user-attachments/assets/55a14c54-d1e0-4e69-9b5f-7a0008c60191)
+![aa](https://github.com/user-attachments/assets/b11afcfa-fc0c-45d5-a5c3-19471c14f630)
+
 
 
 
 ## isnull().sum():
-![image](https://github.com/user-attachments/assets/e04a17c1-7925-4c74-9529-45fd79d22d8c)
+![aas](https://github.com/user-attachments/assets/6fa1f523-23b2-4a3f-821c-7d7ba41855ef)
+
 
 
 
