@@ -1,4 +1,4 @@
-# Implementation-of-SVM-For-Spam-Mail-Detection
+# Ex-11:Implementation-of-SVM-For-Spam-Mail-Detection
 
 ## AIM:
 To write a program to implement the SVM For Spam Mail Detection.
@@ -8,22 +8,89 @@ To write a program to implement the SVM For Spam Mail Detection.
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1. 
-2. 
-3. 
-4. 
+1.Import the necessary python packages using import statements.
+
+2.Read the given csv file using read_csv() method and print the number of contents to be displayed using df.head().
+
+3.Split the dataset using train_test_split.
+
+4.Calculate Y_Pred and accuracy.
+
+5.Print all the outputs.
+
+6.End the Program.
 
 ## Program:
-```
-/*
+```py
 Program to implement the SVM For Spam Mail Detection..
-Developed by: 
-RegisterNumber:  
-*/
-```
+Developed by: Suriya Pravin M
+RegisterNumber: 212223230223
 
+import chardet
+file='spam.csv'
+with open (file,'rb') as rawdata:
+    result = chardet.detect(rawdata.read(100000))
+result
+
+import pandas as pd
+data=pd.read_csv("spam.csv",encoding='windows-1252')
+
+data.head()
+
+data.info()
+
+data.isnull().sum()
+
+x=data["v1"].values
+y=data["v2"].values
+
+from sklearn.model_selection import train_test_split
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=0)
+
+from sklearn.feature_extraction.text import CountVectorizer
+cv=CountVectorizer()
+
+x_train=cv.fit_transform(x_train)
+x_test=cv.transform(x_test)
+
+from sklearn.svm import SVC
+svc=SVC()
+svc.fit(x_train,y_train)
+y_pred=svc.predict(x_test)
+y_pred
+
+from sklearn import metrics
+accuracy=metrics.accuracy_score(y_test,y_pred)
+accuracy
+```
 ## Output:
-![SVM For Spam Mail Detection](sam.png)
+## Encoding:
+![image](https://github.com/user-attachments/assets/94a2e2ae-97b2-4b4f-ad57-9c7d6ed96b2c)
+
+
+## Head():
+![image](https://github.com/user-attachments/assets/27ef174b-6f5b-4a5d-a048-ea0ca7e91d4e)
+
+
+
+## Info():
+![image](https://github.com/user-attachments/assets/55a14c54-d1e0-4e69-9b5f-7a0008c60191)
+
+
+
+## isnull().sum():
+![image](https://github.com/user-attachments/assets/e04a17c1-7925-4c74-9529-45fd79d22d8c)
+
+
+
+## Prediction of y:
+![image](https://github.com/user-attachments/assets/f24d4be6-4ed5-4ea1-8e71-b50aa6ee2d59)
+
+
+
+## Accuracy:
+![image](https://github.com/user-attachments/assets/58efd971-088b-454d-b0a4-289182f6a1c1)
+
 
 
 ## Result:
